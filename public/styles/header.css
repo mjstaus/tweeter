@@ -7,15 +7,18 @@ header {
   display: flex;
   flex-direction:column;
   align-items: center;
-  justify-content: center;
 }
 .user-name h2 {
   margin: 0;
 }
 
-.user-avatar img {
-  height: 100px;
-  width: auto;
+.user-avatar {
+  margin-top: 125px;
 }
+
+.user-avatar img {
+  height: 180px;
+  width: auto;
+} 
 
 
