@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +32,10 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
 
     <!-- Font Awesome Kit -->
-    <script src="https://kit.fontawesome.com/a9aa352b0f.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/a9aa352b0f.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -39,26 +43,35 @@
     <nav>
       <span id="logo">tweeter</span>
       <div class="nav-item">
-      <p id="nav-new-tweet"><strong>Write</strong> a new tweet</p>
-      <i class="fa-solid fa-angles-down"></i>
+        <p id="nav-new-tweet"><strong>Write</strong> a new tweet</p>
+        <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
 
     <header>
       <div class="user-avatar">
-          <img src="/images/profile-hex.png"> 
+        <img src="/images/profile-hex.png" />
       </div>
       <div class="user-name">
-          <h2><strong>Martha</strong> Staus</h2>
+        <h2><strong>Martha</strong> Staus</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1> HELLO I AM AN H1</h1>
-      <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
-      <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
-      <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <div class="tweet-input">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+          </div>
+          <footer>
+            <button class="tweet-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </footer>
+        </form>
+      </section>
     </main>
   </body>
 </html>

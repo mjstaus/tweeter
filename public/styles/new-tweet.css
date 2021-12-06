@@ -1,0 +1,27 @@
+.tweet-input{
+  display: flex;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+  margin-top: 10px;
+}
+
+.tweet-button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: none;
+}
+
+textarea {
+  background-color: #f4f1ec;
+  border: none;
+  flex-grow: 2;
+  height: 31px;
+  resize: none;
+  margin-left: 10px;
+}
