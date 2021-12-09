@@ -55,11 +55,10 @@
 }
 
 /* EVENT CLASSES */
-
 .shadow {
   box-shadow: 10px 10px 1px #aeb1b8;
 }
 
 .highlight {
-  color: orange;
+  color: #FFB100;
 }
