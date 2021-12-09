@@ -1,10 +1,13 @@
-.tweet-input{
+.new-tweet {
+  margin: 35px 0px;
+}
+.tweet-input {
   display: flex;
-  border-bottom: 2px solid #000000;
+  border-bottom: 3px solid #000000;
   padding-bottom: 10px;
 }
 
-footer {
+.new-tweet-footer {
   display: flex;
   justify-content: space-between;
   font-family: "Bungee", cursive;
