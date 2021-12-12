@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#tweet-text").on("input", function(event){
+  $("#tweet-text").on("input", function(){
   
    let $counter = $(this).parentsUntil("form").siblings().find("output")
 
@@ -7,7 +7,6 @@ $(document).ready(function() {
     
    if($counter.val() < 0 && !$counter.hasClass("danger")){
      $counter.addClass("danger")
-     console.log("danger")
    }
    if($counter.val() >= 0 && $counter.hasClass("danger")){
     $counter.removeClass("danger")

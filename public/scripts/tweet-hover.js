@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+  //ADD SHADOW TO MAIN TWEET
   $(".tweet").on("mouseenter", function (event) {
     $(this).addClass("shadow");
   });
@@ -7,6 +9,7 @@ $(document).ready(function () {
     $(this).removeClass("shadow");
   });
 
+  //ADD HIGHLIGHT TO ICONS
   $(".fas").on("mouseenter", function (event) {
     $(this).addClass("highlight");
   });
