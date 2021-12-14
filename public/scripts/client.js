@@ -8,9 +8,7 @@ $(document).ready(function () {
   /* Function createTweetElement accepts object argument and create new DOM element from tweet object   */
   const createTweetElement = (tweetData) => {
     const { user, content, created_at } = tweetData;
-    // const timeSinceTweet =
-    //   Math.round(new Date() - created_at) / 1000 / 60 / 60 / 24;
-
+    const tweetTime = timeago.format(created_at)
     const $tweet = $(`<article class="tweet">
   <header class="tweet-header">
     <div class="tweet-avatar">
@@ -21,7 +19,7 @@ $(document).ready(function () {
   </header>
   <p class="tweet-content"><strong>${content.text}</strong></p>
   <footer class="tweet-footer">
-    <p class="tweet-time">${created_at} days ago</p>
+    <p class="tweet-time">${tweetTime}</p>
     <div class="tweet-icons">
       <i class="fas fa-flag fa-xs"></i>
       <i class="fas fa-retweet fa-xs"></i>
