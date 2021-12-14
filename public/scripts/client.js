@@ -32,38 +32,35 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  /* FunctionrenderTweets accepts an array of objects, creates new DOM elements for each object, and appends each object to tweet container. */
+  /* Function renderTweet renders single tweet to container */
+  const renderTweet = (tweet) => {
+    const $tweet = createTweetElement(tweet);
+    $(".tweet-container").prepend($tweet);
+  };
+
+  /* FunctionrenderTweets accepts an array of objects, creates new DOM elements for each object, and prepends each object to tweet container */
+
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $(".tweet-container").append($tweet);
+      renderTweet(tweet);
     }
   };
 
   /* Render existing tweets to page on load*/
-  $(function() {
-      $.ajax('/tweets', { method: 'GET' })
-      .then(function (tweetData) {
-        renderTweets(tweetData);
-      });
+  const loadTweets = function () {
+    $.get("/tweets").then(function (data) {
+      $(".tweet-container").val("");
+      renderTweets(data);
     });
+  };
+  loadTweets();
 
-  /* Form event handler - prevent default behaviour of submit, serializes the form data, and submits a jQuery post request to /tweets with the serialized form data */ 
+  /* Form event handler - prevent default behaviour of submit, serializes the form data, and submits a jQuery post request to /tweets with the serialized form data */
 
-  $("#new-tweet-form").submit(function(event) {
+  $("#new-tweet-form").submit(function (event) {
     event.preventDefault();
     const formData = $(this).serialize();
-    $.post("/tweets", formData);
-    $(".tweeet-text").val("")
-  });
-
-  $(function() {
-    const $button = $('.tweet-button');
-    $button.on('click', function () {
-      $.ajax('/tweets', { method: 'GET' })
-      .then(function (tweetData) {
-        renderTweets(tweetData);
-      });
-    });
+    $("#tweet-text").val("");
+    $.post("/tweets", formData).then(loadTweets);
   });
 });
