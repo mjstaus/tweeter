@@ -5,6 +5,7 @@
   display: flex;
   border-bottom: 3px solid #000000;
   padding-bottom: 10px;
+  flex-direction: column;
 }
 
 .new-tweet-footer {
@@ -27,8 +28,6 @@
 textarea {
   background-color: #f4f1ec;
   border: none;
-  flex-grow: 2;
-  height: 31px;
+  height: 60px;
   resize: none;
-  margin-left: 10px;
 }
