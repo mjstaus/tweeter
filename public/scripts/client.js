@@ -32,7 +32,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  /* Function renderTweet renders single tweet to container */
+  /* Function renderTweet prepends single tweet to container */
   const renderTweet = (tweet) => {
     const $tweet = createTweetElement(tweet);
     $(".tweet-container").prepend($tweet);
@@ -46,21 +46,27 @@ $(document).ready(function () {
     }
   };
 
-  /* Render existing tweets to page on load*/
+  /* Function loadTweets renders all existing tweets to page on load*/
   const loadTweets = function () {
     $.get("/tweets").then(function (data) {
-      $(".tweet-container").val("");
       renderTweets(data);
     });
   };
   loadTweets();
 
-  /* Form event handler - prevent default behaviour of submit, serializes the form data, and submits a jQuery post request to /tweets with the serialized form data */
+  /* Function loadNewTweet renders newest tweet in tweet database*/
+  const loadNewTweet = function () {
+    $.get("/tweets").then(function (data) {
+      const newTweet = data[data.length-1]
+      renderTweet(newTweet);
+    });
+  }
 
+  /* Form event handler - prevent default behaviour of submit, serializes the form data, and submits a jQuery post request to /tweets with the serialized form data */
   $("#new-tweet-form").submit(function (event) {
     event.preventDefault();
     const formData = $(this).serialize();
     $("#tweet-text").val("");
-    $.post("/tweets", formData).then(loadTweets);
+    $.post("/tweets", formData).then(loadNewTweet);
   });
 });
