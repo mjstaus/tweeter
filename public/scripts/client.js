@@ -63,15 +63,12 @@ $(document).ready(function() {
   //Function validateForm takes a form ID as an argument and prevents submission if submission length is < 0 or > 140.
   const validateForm = function(tweetFieldID) {
     const $tweetValue = $(`#${tweetFieldID}`).val();
-    console.log($tweetValue);
     if (!$tweetValue.length) {
       alert("You need to write something in your tweet!");
-      console.log("TOO SHROT");
       return false;
     }
     if ($tweetValue.length > 140) {
       alert("Your tweet has exceeded the maximum length");
-      console.log("TOO LONG");
       return false;
     }
     return true;
