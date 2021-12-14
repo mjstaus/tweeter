@@ -4,11 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
   /* Function createTweetElement accepts object argument and create new DOM element from tweet object   */
   const createTweetElement = (tweetData) => {
     const { user, content, created_at } = tweetData;
-    const tweetTime = timeago.format(created_at)
+    const tweetTime = timeago.format(created_at);
     const $tweet = $(`<article class="tweet">
   <header class="tweet-header">
     <div class="tweet-avatar">
@@ -45,26 +45,46 @@ $(document).ready(function () {
   };
 
   /* Function loadTweets renders all existing tweets to page on load*/
-  const loadTweets = function () {
-    $.get("/tweets").then(function (data) {
+  const loadTweets = function() {
+    $.get("/tweets").then(function(data) {
       renderTweets(data);
     });
   };
   loadTweets();
 
   /* Function loadNewTweet renders newest tweet in tweet database*/
-  const loadNewTweet = function () {
-    $.get("/tweets").then(function (data) {
-      const newTweet = data[data.length-1]
+  const loadNewTweet = function() {
+    $.get("/tweets").then(function(data) {
+      const newTweet = data[data.length - 1];
       renderTweet(newTweet);
     });
-  }
+  };
+
+  //Function validateForm takes a form ID as an argument and prevents submission if submission length is < 0 or > 140.
+  const validateForm = function(tweetFieldID) {
+    const $tweetValue = $(`#${tweetFieldID}`).val();
+    console.log($tweetValue);
+    if (!$tweetValue.length) {
+      alert("You need to write something in your tweet!");
+      console.log("TOO SHROT");
+      return false;
+    }
+    if ($tweetValue.length > 140) {
+      alert("Your tweet has exceeded the maximum length");
+      console.log("TOO LONG");
+      return false;
+    }
+    return true;
+  };
 
   /* Form event handler - prevent default behaviour of submit, serializes the form data, and submits a jQuery post request to /tweets with the serialized form data */
-  $("#new-tweet-form").submit(function (event) {
+  $("#new-tweet-form").submit(function(event) {
     event.preventDefault();
+    if (!validateForm("tweet-text")) return false;
     const formData = $(this).serialize();
     $("#tweet-text").val("");
     $.post("/tweets", formData).then(loadNewTweet);
   });
 });
+
+
