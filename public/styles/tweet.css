@@ -66,9 +66,11 @@
 
 .tweet-icons .fas {
   color: #4056A1;
-  -webkit-transition: color ease-in-out 275ms;
-  -moz-transition: color ease-in-out 275ms;
-  transition: color ease-in-out 275ms;
+  -webkit-transition: color ease-in-out 200ms;
+  -o-transition: color ease-in-out 200ms;
+  -ms-transition: color ease-in-out 200ms;
+  -moz-transition: color ease-in-out 200ms;
+  transition: color ease-in-out 200ms;
   cursor: pointer;
 }
 
