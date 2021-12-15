@@ -23,6 +23,16 @@
   background-color: #4056A1;
   color: #FFFFFF;
   border: none;
+  cursor: pointer;
+  -webkit-transition: background-color ease-in-out 125ms;
+  -moz-transition: background-color ease-in-out 125ms;
+  -o-transition:background-color ease-in-out 125ms;
+  -ms-transition:background-color ease-in-out 125ms;
+  transition: background-color ease-in-out 125ms;
+}
+
+.tweet-button:hover {
+  background-color: #FFB100;
 }
 
 textarea {

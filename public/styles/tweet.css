@@ -6,6 +6,13 @@
   width: 100%;
   padding: 1%;
   margin-bottom: 20px;
+  -webkit-transition: box-shadow ease-in-out 275ms;
+  -moz-transition: box-shadow ease-in-out 275ms;
+  transition: box-shadow ease-in-out 275ms;
+}
+
+.tweet:hover {
+  box-shadow: 10px 10px 1px #aeb1b8;
 }
 
 /* TWEET HEADER */
@@ -57,15 +64,15 @@
   font-size: small;
 }
 
-.tweet-icons {
+.tweet-icons .fas {
   color: #4056A1;
+  -webkit-transition: color ease-in-out 275ms;
+  -moz-transition: color ease-in-out 275ms;
+  transition: color ease-in-out 275ms;
+  cursor: pointer;
 }
 
-/* EVENT CLASSES */
-.shadow {
-  box-shadow: 10px 10px 1px #aeb1b8;
-}
-
-.highlight {
+.fas:hover {
   color: #FFB100;
 }
+
