@@ -7,7 +7,7 @@
 $(document).ready(function() {
 
   //Hide validation error message on page load
-  $(".error-message").hide(); 
+  $(".error").hide(); 
 
   /* Function escape to guard against XSS attack. Accepts string as argument */
   const escape = function (str) {
@@ -76,13 +76,16 @@ $(document).ready(function() {
   //Function validateForm takes a form ID as an argument and prevents submission if submission length is < 0 or > 140.
   const validateForm = function(tweetFieldID) {
     const $errorMessage = $(".error-message")
-    $errorMessage.hide(); //Hide at beginning of each validation so new error can show on subsequent form submissions, or continue to hide if no validation error
+    const $error = $(".error");
+    $error.hide(); //Hide at beginning of each validation so new error can show on subsequent form submissions, or continue to hide if no validation error
     const $tweetValue = $(`#${tweetFieldID}`).val();
     if (!$tweetValue.length) {
+      $error.show();
       $errorMessage.text("You need to write something in your tweet!").show();
       return false;
     }
     if ($tweetValue.length > 140) {
+      $error.show();
       $errorMessage.text("Your tweet has exceeded the maximum length").show();
       return false;
     }

@@ -74,7 +74,7 @@
   cursor: pointer;
 }
 
-.fas:hover {
+.tweet-icons .fas:hover {
   color: #FFB100;
 }
 
