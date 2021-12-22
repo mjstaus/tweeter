@@ -13,7 +13,7 @@ $(document).ready(function () {
 
   //Toggle new-tweet input on navbar button click
   $(".nav-new-tweet").on("click", function () {
-    $(".new-tweet").toggle();
+    $(".new-tweet").slideToggle();
   });
 
   /* Function escape to guard against XSS attack. Accepts string as argument */
