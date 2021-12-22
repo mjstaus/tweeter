@@ -36,6 +36,15 @@ nav {
 }
 
 #new-tweet{
-  margin-bottom: 0
+  margin-bottom: 0;
+  -webkit-transition: color ease-in-out 200ms;
+  -o-transition: color ease-in-out 200ms;
+  -ms-transition: color ease-in-out 200ms;
+  -moz-transition: color ease-in-out 200ms;
+  transition: color ease-in-out 200ms;
+}
+
+#new-tweet:hover{
+  color: #FFB100;
 }
 

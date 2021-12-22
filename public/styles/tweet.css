@@ -8,11 +8,17 @@
   margin: 20px 0px;
   -webkit-transition: box-shadow ease-in-out 275ms;
   -moz-transition: box-shadow ease-in-out 275ms;
+  -o-transition: box-shadow ease-in-out 275ms;
+  -ms-transition: box-shadow ease-in-out 275ms;
   transition: box-shadow ease-in-out 275ms;
 }
 
 .tweet:hover {
-  box-shadow: 10px 10px 1px #aeb1b8;
+  box-shadow:
+  1px 1px 1px hsl(37, 25%, 80%),
+  2px 2px 2px hsl(37, 25%, 80%),
+  4px 4px 4px hsl(37, 25%, 80%),
+  8px 8px 8px hsl(37, 25%, 80%); 
 }
 
 /* TWEET HEADER */
