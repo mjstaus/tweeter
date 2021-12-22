@@ -5,6 +5,17 @@
  */
 
 $(document).ready(function() {
+
+  //Hide validation error message on page load
+  $(".error-message").hide(); 
+
+  /* Function escape to guard against XSS attack. Accepts string as argument */
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   /* Function createTweetElement accepts object argument and create new DOM element from tweet object   */
   const createTweetElement = (tweetData) => {
     const { user, content, created_at } = tweetData;
@@ -18,7 +29,7 @@ $(document).ready(function() {
           </div>
           <p class="tweet-tag"><strong>${user.handle}</strong></p>
         </header>
-        <p class="tweet-content"><strong>${content.text}</strong></p>
+        <p class="tweet-content"><strong>${escape(content.text)}</strong></p>
         <footer class="tweet-footer">
           <p class="tweet-time">${tweetTime}</p>
           <div class="tweet-icons">
@@ -64,13 +75,15 @@ $(document).ready(function() {
 
   //Function validateForm takes a form ID as an argument and prevents submission if submission length is < 0 or > 140.
   const validateForm = function(tweetFieldID) {
+    const $errorMessage = $(".error-message")
+    $errorMessage.hide(); //Hide at beginning of each validation so new error can show on subsequent form submissions, or continue to hide if no validation error
     const $tweetValue = $(`#${tweetFieldID}`).val();
     if (!$tweetValue.length) {
-      alert("You need to write something in your tweet!");
+      $errorMessage.text("You need to write something in your tweet!").show();
       return false;
     }
     if ($tweetValue.length > 140) {
-      alert("Your tweet has exceeded the maximum length");
+      $errorMessage.text("Your tweet has exceeded the maximum length").show();
       return false;
     }
     return true;
