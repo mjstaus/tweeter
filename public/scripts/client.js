@@ -4,10 +4,17 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
-
+$(document).ready(function () {
   //Hide validation error message on page load
-  $(".error").hide(); 
+  $(".error").hide();
+
+  //Hide new-tweet input on page load
+  $(".new-tweet").hide();
+
+  //Toggle new-tweet input on navbar button click
+  $(".nav-new-tweet").on("click", function () {
+    $(".new-tweet").toggle();
+  });
 
   /* Function escape to guard against XSS attack. Accepts string as argument */
   const escape = function (str) {
@@ -58,24 +65,24 @@ $(document).ready(function() {
   };
 
   /* Function loadTweets renders all existing tweets to page on load*/
-  const loadTweets = function() {
-    $.get("/tweets").then(function(data) {
+  const loadTweets = function () {
+    $.get("/tweets").then(function (data) {
       renderTweets(data);
     });
   };
   loadTweets();
 
   /* Function loadNewTweet renders newest tweet in tweet database*/
-  const loadNewTweet = function() {
-    $.get("/tweets").then(function(data) {
+  const loadNewTweet = function () {
+    $.get("/tweets").then(function (data) {
       const newTweet = data[data.length - 1];
       renderTweet(newTweet);
     });
   };
 
   //Function validateForm takes a form ID as an argument and prevents submission if submission length is < 0 or > 140.
-  const validateForm = function(tweetFieldID) {
-    const $errorMessage = $(".error-message")
+  const validateForm = function (tweetFieldID) {
+    const $errorMessage = $(".error-message");
     const $error = $(".error");
     $error.hide(); //Hide at beginning of each validation so new error can show on subsequent form submissions, or continue to hide if no validation error
     const $tweetValue = $(`#${tweetFieldID}`).val();
@@ -93,7 +100,7 @@ $(document).ready(function() {
   };
 
   /* Form event handler - prevent default behaviour of submit, serializes the form data, and submits a jQuery post request to /tweets with the serialized form data */
-  $("#new-tweet-form").submit(function(event) {
+  $("#new-tweet-form").submit(function (event) {
     event.preventDefault();
     if (!validateForm("tweet-text")) return false;
     const formData = $(this).serialize();
@@ -101,5 +108,3 @@ $(document).ready(function() {
     $.post("/tweets", formData).then(loadNewTweet);
   });
 });
-
-

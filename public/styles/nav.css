@@ -17,7 +17,10 @@ nav {
   justify-content: flex-end;
   align-items: center;
   margin-right: 1.5em;
-  padding-bottom: 0.5em
+  padding-bottom: 0.5em;
+  cursor: pointer;
+  background-color: #4056A1;
+  border: none;
 }
 
 .fa-angles-down {
@@ -31,7 +34,7 @@ nav {
   font-family: 'Bungee', cursive;
 }
 
-#nav-new-tweet {
+#new-tweet{
   margin-bottom: 0
 }
 
