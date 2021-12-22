@@ -13,7 +13,9 @@ $(document).ready(function () {
 
   //Toggle new-tweet input on navbar button click
   $(".nav-new-tweet").on("click", function () {
-    $(".new-tweet").slideToggle();
+    $(".new-tweet").slideToggle().prop("selectionEnd", 1);
+    // if($(".new-tweet").is(":visible")){
+    //   console.log("visible")
   });
 
   /* Function escape to guard against XSS attack. Accepts string as argument */
