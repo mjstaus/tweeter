@@ -35,9 +35,11 @@
   background-color: #FFB100;
 }
 
-textarea {
+#tweet-text {
   background-color: #f4f1ec;
   border: none;
   height: 60px;
   resize: none;
+  outline: none;
 }
+

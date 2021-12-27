@@ -1,23 +1,25 @@
 .user-header {
-  height: 400px;
-  width: 100%;
-  background-color: #FFB100;
+  height: 350px;
+  width: 30%;
+  background-color: #ffb100;
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-left: 5%;
 }
 .user-name h2 {
   margin: 0;
+  color: white
 }
 
-.user-avatar {
+/* .user-avatar {
   margin-top: 125px;
-}
+} */
 
 .user-avatar img {
-  height: 180px;
+  height: 200px;
   width: auto;
-} 
-
-
+}
