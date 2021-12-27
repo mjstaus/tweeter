@@ -41,6 +41,13 @@ body {
   background-color: #f4f1ec;
 }
 
+@media (max-width: 1024px){
+  .columns {
+    flex-direction: column;
+    padding-top: 85px;
+  }
+}
+
 
 
 

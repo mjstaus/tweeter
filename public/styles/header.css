@@ -23,3 +23,11 @@
   height: 200px;
   width: auto;
 }
+
+@media (max-width: 1024px){
+  .user-header{
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0%;
+  }
+}
