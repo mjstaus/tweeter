@@ -44,7 +44,7 @@ body {
 @media (max-width: 1024px){
   .columns {
     flex-direction: column;
-    padding-top: 85px;
+    padding-top: 0px;
   }
 }
 
