@@ -2,7 +2,20 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+This app was built to practice HTML, CSS, JS, jQuery and AJAX front-end skills, as well as Node, Express back-end skills.
+
+<!-- The script tag should live in the head of your page if at all possible -->
+<script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
+
+<!-- Put this wherever you would like your player to appear -->
+<img
+  style="width: 100%; margin: auto; display: block;"
+  class="vidyard-player-embed"
+  src="https://play.vidyard.com/GSDvNArLACggEw2qhvwYG8.jpg"
+  data-uuid="GSDvNArLACggEw2qhvwYG8"
+  data-v="4"
+  data-type="inline"
+/>
 
 ## Getting Started
 
@@ -16,3 +29,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body-parser
+- Chance
+- md5
+- timeago.js
+
+
