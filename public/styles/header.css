@@ -28,6 +28,7 @@
 @media (min-width: 1024px){
   .user-header{
   width: 30%;
+  min-width: 25%;
   margin-top: 20px;
   margin-left: 5%;
     
