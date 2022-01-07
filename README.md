@@ -5,12 +5,13 @@ Tweeter is a simple, single-page Twitter clone.
 This app was built to practice HTML, CSS, JS, jQuery and AJAX front-end skills, as well as Node, Express back-end skills.
 
 ## Final Product
+https://user-images.githubusercontent.com/84533333/148558760-f3125e86-bddf-4b3b-8fc8-6f4e75c87e77.mov
+
 ### Mobile
 !["Mobile screenshot"](screenshots/mobile.png)
 ### Desktop
 !["Desktop screenshot"](screenshots/desktop.png)
 
-### Video Demonstration
 
 ## Getting Started
 
