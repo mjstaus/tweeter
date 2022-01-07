@@ -4,18 +4,12 @@ Tweeter is a simple, single-page Twitter clone.
 
 This app was built to practice HTML, CSS, JS, jQuery and AJAX front-end skills, as well as Node, Express back-end skills.
 
-<!-- The script tag should live in the head of your page if at all possible -->
-<script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
+## Final Product
 
-<!-- Put this wherever you would like your player to appear -->
-<img
-  style="width: 100%; margin: auto; display: block;"
-  class="vidyard-player-embed"
-  src="https://play.vidyard.com/GSDvNArLACggEw2qhvwYG8.jpg"
-  data-uuid="GSDvNArLACggEw2qhvwYG8"
-  data-v="4"
-  data-type="inline"
-/>
+!["Mobile screenshot"](screenshots/index.png)
+!["Desktop screenshot"](screenshots/show.png)
+!["Video"]
+
 
 ## Getting Started
 
